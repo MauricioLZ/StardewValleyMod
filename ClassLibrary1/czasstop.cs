@@ -456,76 +456,76 @@ namespace MultiplayerTime
                 }
                 if (JustPaused)
                 {
-                    if (Game1.buffsDisplay.food != null)
-                    {
-                        food = new Buffs(Game1.buffsDisplay.food,Game1.buffsDisplay.food.millisecondsDuration);
-                    }
-                    if (Game1.buffsDisplay.drink != null)
-                    {
-                        drink = new Buffs(Game1.buffsDisplay.drink, Game1.buffsDisplay.drink.millisecondsDuration);
-                    }
-                    foreach (Buff buff in Game1.buffsDisplay.otherBuffs)
-                    {
-                        buffs.Add(new Buffs(buff, buff.millisecondsDuration));
-                    }
+                    //if (Game1.buffsDisplay.food != null)
+                    //{
+                    //    food = new Buffs(Game1.buffsDisplay.food,Game1.buffsDisplay.food.millisecondsDuration);
+                    //}
+                    //if (Game1.buffsDisplay.drink != null)
+                    //{
+                    //    drink = new Buffs(Game1.buffsDisplay.drink, Game1.buffsDisplay.drink.millisecondsDuration);
+                    //}
+                    //foreach (Buff buff in Game1.buffsDisplay.otherBuffs)
+                    //{
+                    //    buffs.Add(new Buffs(buff, buff.millisecondsDuration));
+                    //}
                 }
                 if (!ShouldTimePass())
                 {
-                    if( food != null && food.buff == Game1.buffsDisplay.food)
-                    {
-                        Game1.buffsDisplay.food.millisecondsDuration = food.duration;
-                    }
-                    else
-                    {
-                        if(Game1.buffsDisplay.food != null)
-                        {
-                            food = new Buffs(Game1.buffsDisplay.food, Game1.buffsDisplay.food.millisecondsDuration);
-                        }
-                        else
-                        {
-                            food = null;
-                        }
-                    }
-                    if (drink != null && drink.buff == Game1.buffsDisplay.drink)
-                    {
-                        Game1.buffsDisplay.drink.millisecondsDuration = drink.duration;
-                    }
-                    else
-                    {
-                        if (Game1.buffsDisplay.drink != null)
-                        {
-                            drink = new Buffs(Game1.buffsDisplay.drink, Game1.buffsDisplay.drink.millisecondsDuration);
-                        }
-                        else
-                        {
-                            drink = null;
-                        }
-                    }
-                    foreach (Buff buff in Game1.buffsDisplay.otherBuffs)
-                    {
-                        bool handled = false;
-                        foreach (Buffs b in buffs)
-                        {
-                            if(buff == b.buff)
-                            {
-                                buff.millisecondsDuration = b.duration;
-                                handled = true;
-                                break;
-                            }
-                        }
-                        if (handled == false)
-                        {
-                            switch (buff.which)
-                            {
-                                case 12: case 13: case 14: case 19: case 25: case 26: case 27:
-                                    buff.millisecondsDuration = 0;
-                                    break;
-                                case 17: case 20: case 21: case 22: case 23: case 24: case 28:
-                                    buffs.Add(new Buffs(buff, buff.millisecondsDuration));
-                                    break;
-                            }
-                        }
-                    }
+                    //if( food != null && food.buff == Game1.buffsDisplay.food)
+                    //{
+                    //    Game1.buffsDisplay.food.millisecondsDuration = food.duration;
+                    //}
+                    //else
+                    //{
+                    //    if(Game1.buffsDisplay.food != null)
+                    //    {
+                    //        food = new Buffs(Game1.buffsDisplay.food, Game1.buffsDisplay.food.millisecondsDuration);
+                    //    }
+                    //    else
+                    //    {
+                    //        food = null;
+                    //    }
+                    //}
+                    //if (drink != null && drink.buff == Game1.buffsDisplay.drink)
+                    //{
+                    //    Game1.buffsDisplay.drink.millisecondsDuration = drink.duration;
+                    //}
+                    //else
+                    //{
+                    //    if (Game1.buffsDisplay.drink != null)
+                    //    {
+                    //        drink = new Buffs(Game1.buffsDisplay.drink, Game1.buffsDisplay.drink.millisecondsDuration);
+                    //    }
+                    //    else
+                    //    {
+                    //        drink = null;
+                    //    }
+                    //}
+                    //foreach (Buff buff in Game1.buffsDisplay.otherBuffs)
+                    //{
+                    //    bool handled = false;
+                    //    foreach (Buffs b in buffs)
+                    //    {
+                    //        if(buff == b.buff)
+                    //        {
+                    //            buff.millisecondsDuration = b.duration;
+                    //            handled = true;
+                    //            break;
+                    //        }
+                    //    }
+                    //    if (handled == false)
+                    //    {
+                    //        switch (buff.which)
+                    //        {
+                    //            case 12: case 13: case 14: case 19: case 25: case 26: case 27:
+                    //                buff.millisecondsDuration = 0;
+                    //                break;
+                    //            case 17: case 20: case 21: case 22: case 23: case 24: case 28:
+                    //                buffs.Add(new Buffs(buff, buff.millisecondsDuration));
+                    //                break;
+                    //        }
+                    //    }
+                    //}
                 }
                 if (JustUnpaused)
                 {
